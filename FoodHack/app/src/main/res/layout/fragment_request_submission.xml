@@ -25,12 +25,14 @@
         android:id="@+id/button6" />
 
     <EditText
-        android:id="@+id/textView"
+        android:id="@+id/requestedDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button6"
         android:layout_centerHorizontal="true"
-        android:text="Tomorrow at noon"
+        android:hint="Enter preferred time"
+        android:clickable="true"
+        android:editable="false"
         android:gravity="center"/>
 
 </RelativeLayout>
