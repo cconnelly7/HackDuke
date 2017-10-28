@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FoodHack</string>
+    <string name="first_name">First Name</string>
 </resources>
