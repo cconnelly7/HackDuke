@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "971644841596",
+    "firebase_url": "https://freshfy-a6947.firebaseio.com",
+    "project_id": "freshfy-a6947",
+    "storage_bucket": "freshfy-a6947.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971644841596:android:e2c112a48b647883",
+        "android_client_info": {
+          "package_name": "com.example.chianne.foodhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971644841596-ncj7cng2rsopstjfigqnein3j2cckinr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7icKEaqYr907ovPUh1vJgG5mAXKU_S4c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
