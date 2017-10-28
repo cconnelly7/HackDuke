@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chianne.foodhack.WelcomePage">
+
+    <TextView
+        android:id="@+id/sign_up_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="NAME OF AWESOME STARTUP"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:layout_above="@+id/textView4"
+        android:layout_marginBottom="71dp" />
+
+    <Button
+        android:id="@+id/loginHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_above="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/registerHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignStart="@+id/loginHome"
+        android:layout_alignLeft="@+id/loginHome" />
+
+</RelativeLayout>
