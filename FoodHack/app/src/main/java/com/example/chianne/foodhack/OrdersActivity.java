@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class OrdersActivity extends Fragment {
+public class OrdersActivity extends AppCompatActivity {
 
     @Nullable
 
@@ -21,18 +21,17 @@ public class OrdersActivity extends Fragment {
     View inflatedView;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        RequestSubmissionFragment requestFragment = new RequestSubmissionFragment();
-                getActivity().getSupportFragmentManager().findFragmentById(R.id.ordersFrame);
-        setFragment(requestFragment);
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_orders);
 
-        return inflater.inflate(R.layout.activity_orders, container, false);
+
     }
 
     // This could be moved into an abstract BaseActivity
     // class for being re-used by several instances
     protected void setFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.ordersFrame, fragment);
