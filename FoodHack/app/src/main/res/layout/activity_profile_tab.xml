@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,78 +11,150 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context="com.example.chianne.foodhack.ProfileTabActivity">
+
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/firstNameEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint=" First Name"
+            android:inputType="textPersonName"
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="16dp" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/lastNameEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint=" Last Name"
+            android:inputType="textPersonName"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="74dp" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/addressLineOneEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint=" Address Line 1"
+            android:inputType="textPersonName"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="134dp" />
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/addressLineTwoEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint=" Address Line 2"
+            android:inputType="textPersonName"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="196dp" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/cityEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
             android:hint=" City"
+            android:inputType="textPersonName"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="259dp" />
 
         <EditText
-            android:id="@+id/editText7"
+            android:id="@+id/stateEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint=" State" />
+            android:hint=" State"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editText8"
+            android:id="@+id/zipCodeEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint=" Zip Code" />
+            android:hint=" Zip Code"
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/chinese"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/chinese" />
+
+        <TextView
+            android:id="@+id/chineseText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chinese"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/italian"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/italian" />
+
+        <TextView
+            android:id="@+id/italianText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Italian"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/indian"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/indian" />
+
+        <TextView
+            android:id="@+id/indianText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Indian"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/mexican"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/mexican" />
+
+        <TextView
+            android:id="@+id/mexicanText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mexican"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/submitProfile-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:text="Save"
+            android:layout_alignTop="@+id/textView4"
+            android:layout_alignStart="@+id/loginHome"
+            android:layout_alignLeft="@+id/loginHome" />
 
     </LinearLayout>
 </ScrollView>
