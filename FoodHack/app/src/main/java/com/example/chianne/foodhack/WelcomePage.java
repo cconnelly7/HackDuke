@@ -180,9 +180,9 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                             String email = user.getEmail();
 
                             User newUser = new User(email, "name", (new Date()).getTime(),
-                                    "1 st,x,CA,90706", uid);
+                                    "1 st,x,CA,90706", uid, "food");
                             String key = mRegisteredUserRef.push().getKey();
-                            mRegisteredUserRef.child(key).setValue(newUser);
+                            mRegisteredUserRef.child(uid).setValue(newUser);
 
 
                         } else {
