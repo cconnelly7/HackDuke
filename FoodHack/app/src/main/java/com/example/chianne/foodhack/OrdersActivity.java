@@ -25,9 +25,9 @@ public class OrdersActivity extends Fragment {
 
         inflatedView = inflater.inflate(R.layout.fragment_request_submission, container, false);
         FrameLayout frame = (FrameLayout) inflatedView.findViewById(R.id.ordersFrame);
-        frame.setId(CONTENT_VIEW_ID);
-        getActivity().setContentView(frame, new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+//        frame.setId(CONTENT_VIEW_ID);
+//        getActivity().setContentView(frame, new FrameLayout.LayoutParams(
+//                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
         if (savedInstanceState == null) {
             Fragment newFragment = new RequestSubmissionFragment();

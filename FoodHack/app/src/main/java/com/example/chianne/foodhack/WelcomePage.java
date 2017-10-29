@@ -23,6 +23,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class WelcomePage extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,6 +32,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
     private Button registerHome;
 
     private TextView signUpTextView;
+    private DatabaseReference mRegisteredUserRef;
 
 
     /*
@@ -96,15 +99,14 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
-            public void onAuthStateChanged(@NonNull
-                                                   FirebaseAuth firebaseAuth) {
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 Log.d("important", "tried to process user");
                 if (user != null) {
                     // RegisteredUser is signed in
                     Log.d("Authentication", "onAuthStateChanged:signed_in:"
                             + user.getUid());
-                    startActivity(new Intent(WelcomePage.this, HomeActivity.class));
+
                 } else {
                     // RegisteredUser is signed out
                     Log.d("Authentication",
@@ -113,6 +115,9 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 // ...
             }
         };
+
+        mRegisteredUserRef = FirebaseDatabase.getInstance()
+                .getReference("registered-users");
 
 
     }
@@ -123,8 +128,6 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
             signIn();
 
         }
-
-
     }
 
     @Override
@@ -132,6 +135,14 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
         super.onStart();
 
         mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
     private void signIn() {
@@ -150,8 +161,10 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                startActivity(new Intent(WelcomePage.this, TempActivity.class));
             } else {
                 Toast.makeText(WelcomePage.this, "Authorization went wrong", Toast.LENGTH_SHORT);
+                FirebaseAuth.getInstance().signOut();
             }
         }
     }
