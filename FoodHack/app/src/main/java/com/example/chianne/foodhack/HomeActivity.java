@@ -1,5 +1,6 @@
 package com.example.chianne.foodhack;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -157,11 +158,12 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    FoodListActivity foodList = new FoodListActivity();
-                    return foodList;
-                case 1:
                     OrdersActivity orders = new OrdersActivity();
                     return orders;
+                case 1:
+                    FoodListActivity foodList = new FoodListActivity();
+                    startActivity(new Intent(HomeActivity.this, TempActivity.class));
+                    return foodList;
                 case 2:
                     ProfileActivity profile = new ProfileActivity();
                     return profile;
@@ -178,9 +180,9 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Select Food";
-                case 1:
                     return "My Orders";
+                case 1:
+                    return "Shop";
                 case 2:
                     return "Profile";
                 default:

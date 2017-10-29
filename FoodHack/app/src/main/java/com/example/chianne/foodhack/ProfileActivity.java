@@ -23,8 +23,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends Fragment implements View.OnClickListener {
-    Context c;
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText firstName;
     private EditText lastName;
@@ -51,38 +50,38 @@ public class ProfileActivity extends Fragment implements View.OnClickListener {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currUser = mAuth.getCurrentUser();
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        c = container.getContext();
-        View v =  inflater.inflate(R.layout.activity_profile, container, false);
 
-        chinese = (ImageView) v.findViewById(R.id.chinese);
-        Picasso.with(c).load(R.drawable.chinese).resize(200,200).into(chinese);
+@Override
+    protected void onCreate(Bundle savedInstanceState){
+    super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_profile);
+
+        chinese = (ImageView) findViewById(R.id.chinese);
+        Picasso.with(this).load(R.drawable.chinese).resize(200,200).into(chinese);
         chinese.setOnClickListener(this);
-        italian = (ImageView) v.findViewById(R.id.italian);
-        Picasso.with(c).load(R.drawable.italian).resize(200,200).into(italian);
+        italian = (ImageView) findViewById(R.id.italian);
+        Picasso.with(this).load(R.drawable.italian).resize(200,200).into(italian);
         italian.setOnClickListener(this);
-        indian = (ImageView) v.findViewById(R.id.indian);
-        Picasso.with(c).load(R.drawable.indian).resize(200,200).into(indian);
+        indian = (ImageView) findViewById(R.id.indian);
+        Picasso.with(this).load(R.drawable.indian).resize(200,200).into(indian);
         indian.setOnClickListener(this);
-        mexican = (ImageView) v.findViewById(R.id.mexican);
-        Picasso.with(c).load(R.drawable.mexican).resize(200,200).into(mexican);
+        mexican = (ImageView) findViewById(R.id.mexican);
+        Picasso.with(this).load(R.drawable.mexican).resize(200,200).into(mexican);
         mexican.setOnClickListener(this);
 
-        firstName = (EditText) v.findViewById(R.id.firstNameEdit);
-        lastName = (EditText) v.findViewById(R.id.lastNameEdit);
-        street = (EditText) v.findViewById(R.id.addressLineOneEdit);
-        city = (EditText) v.findViewById(R.id.cityEdit);
-        state = (EditText) v.findViewById(R.id.stateEdit);
-        zip = (EditText) v.findViewById(R.id.zipCodeEdit);
+        firstName = (EditText) findViewById(R.id.firstNameEdit);
+        lastName = (EditText) findViewById(R.id.lastNameEdit);
+        street = (EditText) findViewById(R.id.addressLineOneEdit);
+        city = (EditText) findViewById(R.id.cityEdit);
+        state = (EditText) findViewById(R.id.stateEdit);
+        zip = (EditText) findViewById(R.id.zipCodeEdit);
 
-        chineseB = (CheckBox) v.findViewById(R.id.chineseText);
-        italianB = (CheckBox) v.findViewById(R.id.italianText);
-        indianB = (CheckBox) v.findViewById(R.id.indianText);
-        mexicanB = (CheckBox) v.findViewById(R.id.mexicanText);
+        chineseB = (CheckBox) findViewById(R.id.chineseText);
+        italianB = (CheckBox) findViewById(R.id.italianText);
+        indianB = (CheckBox) findViewById(R.id.indianText);
+        mexicanB = (CheckBox) findViewById(R.id.mexicanText);
 
-        saveBtn = (Button) v.findViewById(R.id.submitProfile_);
+        saveBtn = (Button) findViewById(R.id.submitProfile_);
 
         foodList = new ArrayList<>();
         if (chineseB.isChecked()) {
@@ -106,7 +105,6 @@ public class ProfileActivity extends Fragment implements View.OnClickListener {
         }
         Log.d("xX", currUser.getUid());
 
-        return v;
     }
 
     @Override
