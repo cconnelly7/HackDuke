@@ -89,13 +89,12 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 .enableAutoManage(this /* FragmentActivity */, new GoogleApiClient.OnConnectionFailedListener() {
                     @Override
                     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-                        Toast.makeText(WelcomePage.this, "Something went wrong", Toast.LENGTH_SHORT);
+                        Toast.makeText(WelcomePage.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 } /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -106,13 +105,13 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                     // RegisteredUser is signed in
                     Log.d("Authentication", "onAuthStateChanged:signed_in:"
                             + user.getUid());
-
+                    startActivity(new Intent(WelcomePage.this, TempActivity.class));
                 } else {
                     // RegisteredUser is signed out
                     Log.d("Authentication",
                             "onAuthStateChanged:signed_out");
                 }
-                // ...
+
             }
         };
 
@@ -161,10 +160,10 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
-                startActivity(new Intent(WelcomePage.this, TempActivity.class));
+                //startActivity(new Intent(WelcomePage.this, TempActivity.class));
             } else {
-                Toast.makeText(WelcomePage.this, "Authorization went wrong", Toast.LENGTH_SHORT);
-                FirebaseAuth.getInstance().signOut();
+                Toast.makeText(WelcomePage.this, "Authorization went wrong later", Toast.LENGTH_SHORT).show();
+                //FirebaseAuth.getInstance().signOut();
             }
         }
     }
