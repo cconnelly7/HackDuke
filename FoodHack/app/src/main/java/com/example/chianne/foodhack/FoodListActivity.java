@@ -24,11 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-
-public class FoodListActivity extends Fragment implements View.OnClickListener {
-    Context c;
-    private Button cart;
-    private Button checkout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,9 +32,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
 public class FoodListActivity extends ListFragment {
 
-
+    Context c;
+    private Button cart;
+    private Button checkout;
     private DatabaseReference mDatabase;
     ArrayList<String> listItems = new ArrayList<String>();
     ArrayAdapter<String> adapter;
@@ -49,27 +47,30 @@ public class FoodListActivity extends ListFragment {
         adapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == cart) {
-            checkout.setVisibility(View.VISIBLE);
-        }
-    }
+
 
     @Override
     public void onStart() {
 
         super.onStart();
-        getActivity().findViewById(R.id.back_button).requestFocus();
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         c = container.getContext();
-        View v =  inflater.inflate(R.layout.activity_profile, container, false);
+        View v =  inflater.inflate(R.layout.activity_food_list, container, false);
         cart = (Button) v.findViewById(R.id.cart_button);
         checkout = (Button) v.findViewById(R.id.checkout_button);
-        cart.setOnClickListener(this.onClick);
+        cart.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                if (v == cart) {
+                    checkout.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         super.onCreateView(inflater, container, savedInstanceState);
         Log.d("imp", "setting up callback");
