@@ -25,7 +25,7 @@ public class LoadInScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent i = new Intent(getApplicationContext(), DashboardActivity.class);
+                Intent i = new Intent(getApplicationContext(), WelcomePage.class);
                 startActivity(i);
             }
         }, 2000);

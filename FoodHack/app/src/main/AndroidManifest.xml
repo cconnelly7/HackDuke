@@ -40,6 +40,8 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".MapsActivity" />
         <activity android:name=".NewerProfileActivity"></activity>
+        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".WelcomePage"></activity>
     </application>
 
 </manifest>
