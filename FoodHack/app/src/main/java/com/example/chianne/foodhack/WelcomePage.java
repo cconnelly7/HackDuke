@@ -76,7 +76,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
             /*
                 Get Firebase mAuth instance
             */
-        mAuth = FirebaseAuth.getInstance();
+
 
 
         // Build a GoogleApiClient with
@@ -92,11 +92,14 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
+        mAuth = FirebaseAuth.getInstance();
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull
                                                    FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
+                Log.d("important", "tried to process user");
                 if (user != null) {
                     // RegisteredUser is signed in
                     Log.d("Authentication", "onAuthStateChanged:signed_in:"
