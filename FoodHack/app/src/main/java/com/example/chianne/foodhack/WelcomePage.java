@@ -26,6 +26,8 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
+
 public class WelcomePage extends AppCompatActivity implements View.OnClickListener {
 
     private Button signInBtn;
@@ -33,7 +35,6 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
 
     private TextView signUpTextView;
     private DatabaseReference mRegisteredUserRef;
-
 
     /*
         Request Code
@@ -45,10 +46,10 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
     */
     private GoogleApiClient mGoogleApiClient;
 
-    private static final String TAG = "GoogleActivity";
+    private static final String TAG = "GoogleLoginActivity";
 
     /*
-    Firebase Authentication
+        Firebase Authentication
      */
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -74,12 +75,6 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-
-
-            /*
-                Get Firebase mAuth instance
-            */
-
 
 
         // Build a GoogleApiClient with
@@ -116,7 +111,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
         };
 
         mRegisteredUserRef = FirebaseDatabase.getInstance()
-                .getReference("registered-users");
+                .getReference("users");
 
 
     }
@@ -168,6 +163,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
         }
     }
 
+    //first time log in
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
@@ -178,6 +174,16 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+
+                            String uid = user.getUid();
+                            Log.d(TAG, "uid: " + uid);
+                            String email = user.getEmail();
+
+                            User newUser = new User(email, "name", (new Date()).getTime(),
+                                    "1 st,x,CA,90706", uid);
+                            String key = mRegisteredUserRef.push().getKey();
+                            mRegisteredUserRef.child(key).setValue(newUser);
+
 
                         } else {
                             // If sign in fails, display a message to the user.
