@@ -2,8 +2,11 @@ package com.example.chianne.foodhack;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class FoodListActivity extends Fragment {
+public class FoodListActivity extends ListFragment {
 
 
     private DatabaseReference mDatabase;
@@ -29,21 +32,29 @@ public class FoodListActivity extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
+
+    @Override
+    public void onStart() {
+
+        super.onStart();
+        getActivity().findViewById(R.id.back_button).requestFocus();
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
         adapter = new ArrayAdapter<String>(getActivity(),
-                R.id.item_listView,
+                android.R.layout.activity_list_item,
                 listItems);
-        getActivity().findViewById(R.id.item_listView).setAdapter(adapter);
+        setListAdapter(adapter);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         DatabaseReference mRef = mDatabase.getRef();
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d("imp","data change!!");
                 for (DataSnapshot item_s:dataSnapshot.getChildren()) {
                     addItem((String)item_s.getValue());
                 }
