@@ -28,13 +28,16 @@
         android:editable="false"
         android:focusable="false"
         android:gravity="center"
-        android:hint="Enter preferred time" />
+        android:hint="Enter preferred time"
+        android:textColor="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/submitOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Schedule Order" />
+        android:background="@color/colorPrimaryDark"
+        android:text="Schedule Order"
+        android:textColor="@color/colorAccent" />
 
 
 </LinearLayout>
