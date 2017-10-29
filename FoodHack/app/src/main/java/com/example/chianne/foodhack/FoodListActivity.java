@@ -17,6 +17,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ArrayAdapter;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
 public class FoodListActivity extends Fragment implements View.OnClickListener {
     Context c;
     private Button cart;
@@ -41,6 +49,12 @@ public class FoodListActivity extends ListFragment {
         adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v == cart) {
+            checkout.setVisibility(View.VISIBLE);
+        }
+    }
 
     @Override
     public void onStart() {
@@ -55,7 +69,7 @@ public class FoodListActivity extends ListFragment {
         View v =  inflater.inflate(R.layout.activity_profile, container, false);
         cart = (Button) v.findViewById(R.id.cart_button);
         checkout = (Button) v.findViewById(R.id.checkout_button);
-        cart.setOnClickListener(this);
+        cart.setOnClickListener(this.onClick);
 
         super.onCreateView(inflater, container, savedInstanceState);
         Log.d("imp", "setting up callback");
@@ -82,11 +96,6 @@ public class FoodListActivity extends ListFragment {
         return inflater.inflate(R.layout.activity_food_list, container, false);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == cart) {
-            checkout.setVisibility(View.VISIBLE);
-        }
-    }
+
 
 }
