@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/dash_bottom"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:weightSum="1">
 
+        <EditText
+            android:id="@+id/searchBarEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/filter_spinner_found"
+            android:gravity="start"
+            android:hint="Search For Items"
+            android:paddingLeft="10dp"
+            android:paddingTop="0dp" />
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:animateLayoutChanges="true"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <ListView
+            android:id="@+id/item_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#000000"
+            android:dividerHeight="1dp"
+            android:listSelector="#F8F8FF" />
+    </LinearLayout>
+<!--
     <TextView
         android:id="@+id/veggies"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Vegetables"
+        android:text="Apples"
         android:textSize="28sp"
         android:textStyle="bold"
         android:layout_alignParentStart="true" />
@@ -20,11 +54,12 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Fruits"
+        android:text="Broccoli"
         android:textSize="28sp"
         android:textStyle="bold"
         android:layout_below="@+id/veggies"
         android:layout_alignParentStart="true" />
+        -->
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
@@ -33,4 +68,4 @@
         android:layout_marginBottom="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-</RelativeLayout>
+</LinearLayout>
