@@ -47,7 +47,6 @@
                 android:ems="10"
                 android:hint=" Address Line 1"
                 android:inputType="textPersonName" />
-                <!--
 
             <EditText
                 android:id="@+id/addressLineTwoEdit"
@@ -89,8 +88,7 @@
                 android:id="@+id/chinese"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/chinese" />
+                 />
 
             <TextView
                 android:id="@+id/chineseText"
@@ -103,9 +101,7 @@
             <ImageView
                 android:id="@+id/italian"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/italian" />
+                android:layout_height="200dp"/>
 
             <TextView
                 android:id="@+id/italianText"
@@ -118,9 +114,7 @@
             <ImageView
                 android:id="@+id/indian"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/indian" />
+                android:layout_height="200dp" />
 
             <TextView
                 android:id="@+id/indianText"
@@ -133,9 +127,7 @@
             <ImageView
                 android:id="@+id/mexican"
                 android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/mexican" />
+                android:layout_height="200dp" />
 
             <TextView
                 android:id="@+id/mexicanText"
@@ -154,7 +146,7 @@
                 android:text="Save"
                 android:layout_alignTop="@+id/textView4"
                 android:layout_alignStart="@+id/loginHome"
-                android:layout_alignLeft="@+id/loginHome" /> -->
+                android:layout_alignLeft="@+id/loginHome" />
             </LinearLayout>
     </ScrollView>
 <!--
