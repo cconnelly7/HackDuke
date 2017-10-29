@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -41,6 +44,11 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
     private Calendar myCalendar = Calendar.getInstance();
     private String timeStr = "";
     private String dateStr = "";
+
+    private long datetime;
+
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    FirebaseUser currUser = mAuth.getCurrentUser();
 
     DatabaseReference foodListRef = FirebaseDatabase.getInstance().getReference("food-list");
     @Override
@@ -121,6 +129,7 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+                datetime = myCalendar.getTime().getTime();
                 dateStr = format1.format(myCalendar.getTime());
                 requestedDatetime.setText(dateStr + " " + timeStr);
             }
@@ -159,9 +168,32 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == submitBtn) {
-            Intent intent = new Intent(getApplicationContext(), TrackingActivity.class);
+
+            submitToDatabase();
+
+            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
             startActivity(intent);
+            finish();
         }
+    }
+
+    private void submitToDatabase() {
+        DatabaseReference requestRef = FirebaseDatabase.getInstance().getReference("request-list");
+
+        String key = requestRef.push().getKey();
+
+        String items = "";
+
+        for (String i : cartItems) {
+            items += (i+",");
+        }
+
+        String uid = currUser.getUid();
+
+        requestRef.child(key + "--" + uid).child("items").setValue(items);
+        requestRef.child(key + "--" + uid).child("datetime").setValue(datetime);
+
+
     }
 
 
