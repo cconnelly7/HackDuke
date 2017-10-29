@@ -88,7 +88,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         saveBtn = (Button) findViewById(R.id.submitProfile);
         saveBtn.setOnClickListener(this);
 
-        //loadProfile();
+        loadProfile();
 
         if(currUser != null) {
             currUserUID = currUser.getUid();
@@ -103,6 +103,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     foodList.add(((CheckBox) v).getText().toString());
 
                 }
+
+                if (!((CheckBox) v).isChecked() && foodList.contains(((CheckBox) v).getText().toString())) {
+                    foodList.remove(((CheckBox) v).getText().toString());
+
+                }
             }
         });
 
@@ -111,6 +116,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked() && !foodList.contains(((CheckBox) v).getText().toString())) {
                     foodList.add(((CheckBox) v).getText().toString());
+
+                }
+
+                if (!((CheckBox) v).isChecked() && foodList.contains(((CheckBox) v).getText().toString())) {
+                    foodList.remove(((CheckBox) v).getText().toString());
 
                 }
             }
@@ -123,6 +133,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     foodList.add(((CheckBox) v).getText().toString());
 
                 }
+
+                if (!((CheckBox) v).isChecked() && foodList.contains(((CheckBox) v).getText().toString())) {
+                    foodList.remove(((CheckBox) v).getText().toString());
+
+                }
             }
         });
 
@@ -131,6 +146,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked() && !foodList.contains(((CheckBox) v).getText().toString())) {
                     foodList.add(((CheckBox) v).getText().toString());
+
+                }
+
+                if (!((CheckBox) v).isChecked() && foodList.contains(((CheckBox) v).getText().toString())) {
+                    foodList.remove(((CheckBox) v).getText().toString());
 
                 }
             }
