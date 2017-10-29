@@ -1,5 +1,6 @@
 package com.example.chianne.foodhack;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -60,15 +61,23 @@ public class FoodListActivity extends ListFragment {
         c = container.getContext();
         View v =  inflater.inflate(R.layout.activity_food_list, container, false);
         cart = (Button) v.findViewById(R.id.cart_button);
-        checkout = (Button) v.findViewById(R.id.checkout_button);
         cart.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                if (v == cart) {
-                    checkout.setVisibility(View.VISIBLE);
-                }
+                cart.setText("Checkout");
+                cart.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        //getActivity().switchTab(2);
+
+
+                    }
+                });
+
             }
         });
 
