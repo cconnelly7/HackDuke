@@ -1,5 +1,6 @@
 package com.example.chianne.foodhack;
 
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.app.DatePickerDialog;
 import android.app.Activity;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import android.app.DatePickerDialog;
 import android.widget.DatePicker;
@@ -17,6 +20,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +43,15 @@ public class RequestSubmissionFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private View inflatedView;
+
+    private Button requestSubmitButton;
+    private TextView requestedDatetime;
+
+    private Calendar myCalendar;
+    private String timeStr = "";
+    private String dateStr = "";
 
     public RequestSubmissionFragment() {
         // Required empty public constructor
@@ -77,7 +91,67 @@ public class RequestSubmissionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_request_submission, container, false);
+
+        inflatedView = inflater.inflate(R.layout.fragment_request_submission, container, false);
+
+
+        this.requestSubmitButton = (Button) inflatedView.findViewById(R.id.requestSubmitButton);
+        this.requestedDatetime = (TextView) inflatedView.findViewById(R.id.requestedDatetime);
+
+        this.requestSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = getActivity().getApplicationContext();
+                CharSequence text = "Delivery submitting...";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
+        });
+
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+                dateStr = format1.format(myCalendar.getTime());
+                requestedDatetime.setText(dateStr + " " + timeStr);
+            }
+
+        };
+
+        final TimePickerDialog.OnTimeSetListener time = new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+
+                        timeStr = hourOfDay + ":" + minute;
+                        requestedDatetime.setText(dateStr + " " + timeStr);
+                    }
+                };
+
+
+        this.requestedDatetime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(getActivity(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                TimePickerDialog t = new TimePickerDialog(getActivity(), time,
+                        myCalendar.get(Calendar.HOUR_OF_DAY),
+                        myCalendar.get(Calendar.MINUTE), false);
+                t.show();
+            };
+        });
+
+
+        return inflatedView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
