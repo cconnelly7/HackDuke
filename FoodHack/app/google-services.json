@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "971644841596-17tb3n1csn46vngjis6bo7c747psvb80.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.chianne.foodhack",
-            "certificate_hash": "5ba58f25ca9a1b5c9cb942701825f4090f81406d"
-          }
-        },
-        {
           "client_id": "971644841596-ncj7cng2rsopstjfigqnein3j2cckinr.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "971644841596-ncj7cng2rsopstjfigqnein3j2cckinr.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
