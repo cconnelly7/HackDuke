@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "26.0.0"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.example.chianne.foodhack"
         minSdkVersion 15
@@ -21,6 +21,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:design:25.4.0'
+    compile 'com.google.firebase:firebase-database:11.0.0'
+    //compile 'com.google.firebase:firebase-core:11.0.0'
+    compile 'com.google.firebase:firebase-auth:11.0.0'
+    //compile 'com.google.firebase:firebase-config:9.4.0'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
