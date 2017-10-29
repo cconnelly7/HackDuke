@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.chianne.foodhack.OrderMapFragment">
+    tools:context="com.example.chianne.foodhack.OrderMapFragment"
+    android:id="@+id/orderMap">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
