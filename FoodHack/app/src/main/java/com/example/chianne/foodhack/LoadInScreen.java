@@ -15,11 +15,11 @@ public class LoadInScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load_in_screen);
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageView5);
+        //ImageView imageView = (ImageView) findViewById(R.id.imageView5);
 
-        Picasso.with(this)
-                .load("drawable/nourish")
-                .into(imageView);
+       // Picasso.with(this)
+       //         .load("drawable/nourish")
+       //         .into(imageView);
 
         new Handler().postDelayed(new Runnable() {
             @Override
