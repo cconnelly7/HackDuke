@@ -28,8 +28,6 @@
         android:cropToPadding="false"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_alignTop="@id/background2"
-        android:layout_alignLeft="@id/background2"
         android:src="@drawable/nourish" />
 
 </RelativeLayout>
