@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogOnActivity" />
+        <activity android:name=".WelcomePage" />
+        <activity android:name=".ProfileTabActivity"></activity>
     </application>
 
 </manifest>
