@@ -22,6 +22,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         profileBtn.setOnClickListener(this);
         orderBtn = (Button) findViewById(R.id.orderBtn);
         orderBtn.setOnClickListener(this);
+        mapBtn = (Button) findViewById(R.id.mapBtn);
+        mapBtn.setOnClickListener(this);
 
     }
 
@@ -33,6 +35,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
         if (v == orderBtn) {
             startActivity(new Intent(this, TempActivity.class));
+        }
+
+        if (v == mapBtn) {
+            startActivity(new Intent(this, OrdersActivity.class));
         }
 
     }
