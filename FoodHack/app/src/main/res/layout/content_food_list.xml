@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.chianne.foodhack.FoodList"
+    tools:context="com.example.chianne.foodhack.FoodListActivity"
     tools:showIn="@layout/activity_food_list">
 
 </android.support.constraint.ConstraintLayout>
