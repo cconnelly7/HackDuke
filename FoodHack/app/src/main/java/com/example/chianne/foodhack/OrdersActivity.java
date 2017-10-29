@@ -23,17 +23,17 @@ public class OrdersActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        inflatedView = inflater.inflate(R.layout.fragment_request_submission, container, false);
-        FrameLayout frame = (FrameLayout) inflatedView.findViewById(R.id.ordersFrame);
-//        frame.setId(CONTENT_VIEW_ID);
-//        getActivity().setContentView(frame, new FrameLayout.LayoutParams(
-//                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
-
-        if (savedInstanceState == null) {
-            Fragment newFragment = new RequestSubmissionFragment();
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.add(CONTENT_VIEW_ID, newFragment).commit();
-        }
+//        inflatedView = inflater.inflate(R.layout.fragment_request_submission, container, false);
+//        FrameLayout frame = (FrameLayout) inflatedView.findViewById(R.id.ordersFrame);
+////        frame.setId(CONTENT_VIEW_ID);
+////        getActivity().setContentView(frame, new FrameLayout.LayoutParams(
+////                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+//
+//        if (savedInstanceState == null) {
+//            Fragment newFragment = new RequestSubmissionFragment();
+//            FragmentTransaction ft = getFragmentManager().beginTransaction();
+//            ft.add(CONTENT_VIEW_ID, newFragment).commit();
+//        }
 
         return inflater.inflate(R.layout.activity_orders, container, false);
     }
