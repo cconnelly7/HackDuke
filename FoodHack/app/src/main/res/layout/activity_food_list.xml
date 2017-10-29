@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.chianne.foodhack.FoodListActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dash_bottom"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/veggies"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Vegetables"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/fruits"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Fruits"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/veggies"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
