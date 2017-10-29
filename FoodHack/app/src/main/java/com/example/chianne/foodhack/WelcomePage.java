@@ -105,7 +105,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                     // RegisteredUser is signed in
                     Log.d("Authentication", "onAuthStateChanged:signed_in:"
                             + user.getUid());
-                    startActivity(new Intent(WelcomePage.this, TempActivity.class));
+                    startActivity(new Intent(WelcomePage.this, HomeActivity.class));
                 } else {
                     // RegisteredUser is signed out
                     Log.d("Authentication",
