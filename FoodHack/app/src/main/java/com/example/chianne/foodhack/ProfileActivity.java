@@ -185,7 +185,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 String uid = (String) userDataMap.get("uid");
                 String name = (String) userDataMap.get("name");
                 String email = (String) userDataMap.get("email");
-                long dateTime = (long) userDataMap.get("datetime");
+               // long dateTime = (long) userDataMap.get("datetime");
                 String address = (String) userDataMap.get("address");
                 String food = (String) userDataMap.get("food");
 
