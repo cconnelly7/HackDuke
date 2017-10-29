@@ -17,6 +17,7 @@
 
 
     <Button
+        android:id="@+id/mapBtn"
         android:layout_width="306dp"
         android:layout_height="6dp"
         android:layout_weight="1"
