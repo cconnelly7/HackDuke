@@ -171,7 +171,7 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
 
             submitToDatabase();
 
-            Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
             startActivity(intent);
             finish();
         }
