@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green"
     tools:context="com.example.chianne.foodhack.LoadInScreen">
 
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="331dp"
+        android:layout_height="459dp"
+        android:padding="10dp"
+        app:srcCompat="@drawable/nourish"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="0dp" />
 </android.support.constraint.ConstraintLayout>
