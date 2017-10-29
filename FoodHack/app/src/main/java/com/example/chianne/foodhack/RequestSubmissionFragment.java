@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public class RequestSubmissionFragment extends Fragment {
     private Button requestSubmitButton;
     private TextView requestedDatetime;
 
-    private Calendar myCalendar;
+    private Calendar myCalendar = Calendar.getInstance();
     private String timeStr = "";
     private String dateStr = "";
 
@@ -86,6 +87,7 @@ public class RequestSubmissionFragment extends Fragment {
 
 
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -140,9 +142,11 @@ public class RequestSubmissionFragment extends Fragment {
         this.requestedDatetime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(getActivity(), date, myCalendar
+                Log.d("debugging", "pick a date");
+                DatePickerDialog dp = new DatePickerDialog(getActivity(), date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH));
+                dp.show();
                 TimePickerDialog t = new TimePickerDialog(getActivity(), time,
                         myCalendar.get(Calendar.HOUR_OF_DAY),
                         myCalendar.get(Calendar.MINUTE), false);

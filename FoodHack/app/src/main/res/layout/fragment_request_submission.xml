@@ -32,6 +32,7 @@
         android:layout_centerHorizontal="true"
         android:hint="Enter preferred time"
         android:clickable="true"
+        android:focusable="false"
         android:editable="false"
         android:gravity="center"/>
 
