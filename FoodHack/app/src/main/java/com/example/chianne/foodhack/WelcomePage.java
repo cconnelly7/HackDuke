@@ -28,7 +28,7 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         if (v==loginHome) {
-            Intent intent = new Intent(WelcomePage.this, LogOnActivity.class);
+            Intent intent = new Intent(WelcomePage.this, HomeActivity.class);
             WelcomePage.this.startActivity(intent);
             finish();
         }
