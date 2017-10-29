@@ -31,10 +31,7 @@
         <activity android:name=".OrdersActivity" />
         <activity android:name=".FoodListActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".ProfileTabActivity" />
-<<<<<<< HEAD
-        <activity android:name=".Profile" />
-=======
+        <activity android:name=".ProfileActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -51,7 +48,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
->>>>>>> d24a7edc38ca55aefa8e905b2d35f9d6e89fdd03
+
     </application>
 
 </manifest>
