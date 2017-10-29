@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:gravity="center"
@@ -22,7 +23,7 @@
         android:textSize="35dp" />
 
     <EditText
-        android:id="@+id/login_username_edit"
+        android:id="@+id/login_email_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView3"
@@ -39,15 +40,15 @@
         android:id="@+id/login_pw_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/login_username_edit"
-        android:layout_below="@+id/login_username_edit"
+        android:layout_below="@+id/login_email_edit"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:fontFamily="monospace"
         android:hint="Password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="202dp" />
+        tools:layout_editor_absoluteY="202dp"
+        android:layout_alignLeft="@+id/login_email_edit" />
 
     <Button
         android:id="@+id/login_btn"
@@ -67,8 +68,8 @@
         android:layout_height="wrap_content"
         android:text="Back"
         android:layout_below="@+id/forgot_pw"
-        android:layout_alignStart="@+id/login_btn"
-        android:layout_marginTop="14dp" />
+        android:layout_marginTop="14dp"
+        android:layout_alignLeft="@+id/login_btn" />
 
     <TextView
         android:id="@+id/forgot_pw"
