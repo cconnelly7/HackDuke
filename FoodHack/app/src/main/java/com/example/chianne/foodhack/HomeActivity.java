@@ -166,7 +166,7 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
                     return foodList;
                 case 2:
                     ProfileActivity profile = new ProfileActivity();
-                    return profile;
+                    return null;
             }
             return null;
         }

@@ -1,6 +1,8 @@
 package com.example.chianne.foodhack;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -81,7 +83,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         indianB = (CheckBox) findViewById(R.id.indianText);
         mexicanB = (CheckBox) findViewById(R.id.mexicanText);
 
-        saveBtn = (Button) findViewById(R.id.submitProfile_);
+        saveBtn = (Button) findViewById(R.id.submitProfile);
+        saveBtn.setOnClickListener(this);
 
         foodList = new ArrayList<>();
         if (chineseB.isChecked()) {
@@ -111,10 +114,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if (v == saveBtn) {
             submit();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    startActivity(new Intent(ProfileActivity.this, DashboardActivity.class));
+                    finish();
+                }
+            }, 2000);
         }
     }
 
-    private void submit() {
+    public void submit() {
         DatabaseReference currUserRef = FirebaseDatabase.getInstance()
                 .getReference("users").child(currUser.getUid());
         Log.d("xX", currUser.getUid());
@@ -122,11 +132,13 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         String name = firstName.getText().toString() + " " + lastName.getText().toString();
         currUserRef.child("name").setValue(name);
 
-        String address = street.getText().toString() + "," + city.getText().toString()
+        String address = street.getText().toString() + "," + city.getText().toString() + ","
                 + state.getText().toString() + "," + zip.getText().toString();
         currUserRef.child("address").setValue(address);
 
         currUserRef.child("food").setValue(foods);
+
+        return;
 
 
     }

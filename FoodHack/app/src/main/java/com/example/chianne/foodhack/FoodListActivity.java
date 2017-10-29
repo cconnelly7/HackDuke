@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -139,5 +140,8 @@ public class FoodListActivity extends Fragment implements View.OnClickListener {
     }
 
 
+    @Override
+    public void onClick(View v) {
 
+    }
 }
