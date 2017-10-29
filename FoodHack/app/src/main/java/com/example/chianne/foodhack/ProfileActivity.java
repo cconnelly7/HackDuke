@@ -195,11 +195,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 String food = (String) userDataMap.get("food");
 
                 if (uid.equals(currUserUID)) {
-<<<<<<< HEAD
-                    setFields(uid, name, email, 0, address, food);
-=======
                     setFields(uid, name, email, address, food);
->>>>>>> master
+
                 }
             }
 
