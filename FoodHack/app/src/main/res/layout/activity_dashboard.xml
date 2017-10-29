@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context="com.example.chianne.foodhack.DashboardActivity">
 
 
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/triangles" />
+
+    <Button
+        android:id="@+id/orderBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/profileBtn"
+        android:layout_toRightOf="@+id/profileBtn"
+        android:layout_weight="1"
+        android:text="Ordering" />
+
+    <Button
+        android:id="@+id/profileBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="1"
+        android:text="Profile" />
+<!--
     <Button
         android:id="@+id/orderBtn"
         android:layout_width="314dp"
@@ -15,18 +42,18 @@
         android:layout_weight="1"
         android:text="Ordering" />
 
-<!--
+
     <Button
         android:id="@+id/mapBtn"
         android:layout_width="306dp"
         android:layout_height="6dp"
         android:layout_weight="1"
-        android:text="Map" /> -->
+        android:text="Map" />
 
     <Button
         android:id="@+id/profileBtn"
         android:layout_width="304dp"
         android:layout_height="15dp"
         android:layout_weight="1"
-        android:text="Profile" />
-</LinearLayout>
+        android:text="Profile" /> -->
+</RelativeLayout>
