@@ -28,8 +28,8 @@ public class OrdersActivity extends Fragment {
 //                getActivity().getSupportFragmentManager().findFragmentById(R.id.ordersFrame);
 //        setFragment(requestFragment);
 
-        Intent intent = new Intent(this, RequestSubmissionFragment.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, RequestSubmissionFragment.class);
+        //startActivity(intent);
 
         return inflater.inflate(R.layout.activity_orders, container, false);
     }

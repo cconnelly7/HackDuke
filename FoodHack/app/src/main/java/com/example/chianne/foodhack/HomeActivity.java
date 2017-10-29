@@ -159,15 +159,13 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
             switch(position) {
                 case 0:
                     BlankFragment foodList = new BlankFragment();
-                    Intent intent = new Intent(this, FoodListActivity.class);
-                    startActivity(intent);
-                case 1:
-                    FoodListActivity foodList = new FoodListActivity();
-                    startActivity(new Intent(HomeActivity.this, TempActivity.class));
-                    return foodList;
+                    //Intent intent = new Intent(this, FoodListActivity.class);
+                    //startActivity(intent);
+                    return null;
+
                 case 1:
                     OrdersActivity orders = new OrdersActivity();
-                    return orders;
+                    return null;
                 case 2:
                     BlankFragment profile = new BlankFragment();
                     return profile;
