@@ -11,12 +11,24 @@
     <ListView
         android:id="@+id/lv1"
         android:layout_width="match_parent"
-        android:layout_height="235dp" />
+        android:layout_height="185dp" />
 
     <ListView
         android:id="@+id/lv2"
         android:layout_width="match_parent"
-        android:layout_height="216dp" />
+        android:layout_height="216dp"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/requestedDatetime"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:editable="false"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="Enter preferred time" />
 
     <Button
         android:id="@+id/submitOrder"

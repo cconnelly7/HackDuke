@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ public class TimeDate extends AppCompatActivity {
     private View inflatedView;
 
     private Button requestSubmitButton;
-    private TextView requestedDatetime;
+    private EditText requestedDatetime;
 
     private Calendar myCalendar = Calendar.getInstance();
     private String timeStr = "";
@@ -36,7 +37,7 @@ public class TimeDate extends AppCompatActivity {
 
 
         requestSubmitButton = (Button) findViewById(R.id.requestSubmitButton);
-        requestedDatetime = (TextView) findViewById(R.id.requestedDatetime);
+        requestedDatetime = (EditText) findViewById(R.id.requestedDatetime);
 
         requestSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,11 +96,11 @@ public class TimeDate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("debugging", "pick a date");
-                DatePickerDialog dp = new DatePickerDialog(getApplicationContext(), date, myCalendar
+                DatePickerDialog dp = new DatePickerDialog(TimeDate.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH));
                 dp.show();
-                TimePickerDialog t = new TimePickerDialog(getApplicationContext(), time,
+                TimePickerDialog t = new TimePickerDialog(TimeDate.this, time,
                         myCalendar.get(Calendar.HOUR_OF_DAY),
                         myCalendar.get(Calendar.MINUTE), false);
                 t.show();
