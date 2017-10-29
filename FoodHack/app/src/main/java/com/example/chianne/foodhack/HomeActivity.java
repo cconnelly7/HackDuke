@@ -161,9 +161,12 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
                     BlankFragment foodList = new BlankFragment();
                     Intent intent = new Intent(this, FoodListActivity.class);
                     startActivity(intent);
+                case 1:
+                    FoodListActivity foodList = new FoodListActivity();
+                    startActivity(new Intent(HomeActivity.this, TempActivity.class));
                     return foodList;
                 case 1:
-                    BlankFragment orders = new BlankFragment();
+                    OrdersActivity orders = new OrdersActivity();
                     return orders;
                 case 2:
                     BlankFragment profile = new BlankFragment();
@@ -181,9 +184,9 @@ public class HomeActivity extends AppCompatActivity implements OrderMapFragment.
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Select Food";
-                case 1:
                     return "My Orders";
+                case 1:
+                    return "Shop";
                 case 2:
                     return "Profile";
                 default:

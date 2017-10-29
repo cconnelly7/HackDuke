@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class OrdersActivity extends Activity {
+public class OrdersActivity extends Fragment {
 
     @Nullable
 

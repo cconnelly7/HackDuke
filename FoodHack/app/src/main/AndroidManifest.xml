@@ -39,6 +39,7 @@
         <activity android:name=".TimeDate" />
         <activity android:name=".TrackingActivity" />
         <activity android:name=".NewerProfileActivity"></activity>
+        <activity android:name=".DashboardActivity"></activity>
     </application>
 
 </manifest>
