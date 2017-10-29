@@ -20,6 +20,7 @@ public class ProfileActivity extends Fragment {
         c = container.getContext();
         View v =  inflater.inflate(R.layout.activity_profile, container, false);
 
+
         ImageView chinese = (ImageView) v.findViewById(R.id.chinese);
         Picasso.with(c).load(R.drawable.chinese).resize(200,200).into(chinese);
         ImageView italian = (ImageView) v.findViewById(R.id.italian);

@@ -37,6 +37,7 @@
             android:divider="#000000"
             android:dividerHeight="1dp"
             android:listSelector="#F8F8FF" />
+
     </LinearLayout>
 <!--
     <TextView
