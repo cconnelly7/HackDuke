@@ -10,7 +10,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
     private Button profileBtn;
     private Button orderBtn;
-    private Button mapBtn;
+    //private Button mapBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         profileBtn.setOnClickListener(this);
         orderBtn = (Button) findViewById(R.id.orderBtn);
         orderBtn.setOnClickListener(this);
-        mapBtn = (Button) findViewById(R.id.mapBtn);
-        mapBtn.setOnClickListener(this);
+        //mapBtn = (Button) findViewById(R.id.mapBtn);
+        //mapBtn.setOnClickListener(this);
 
     }
 
@@ -37,9 +37,9 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             startActivity(new Intent(this, TempActivity.class));
         }
 
-        if (v == mapBtn) {
+        /*if (v == mapBtn) {
             startActivity(new Intent(this, OrdersActivity.class));
-        }
+        }*/
 
     }
 }

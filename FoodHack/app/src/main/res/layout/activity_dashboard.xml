@@ -15,13 +15,13 @@
         android:layout_weight="1"
         android:text="Ordering" />
 
-
+<!--
     <Button
         android:id="@+id/mapBtn"
         android:layout_width="306dp"
         android:layout_height="6dp"
         android:layout_weight="1"
-        android:text="Map" />
+        android:text="Map" /> -->
 
     <Button
         android:id="@+id/profileBtn"
