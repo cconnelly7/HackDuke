@@ -4,9 +4,23 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 /**
@@ -23,6 +37,8 @@ public class OrderMapFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private View inflatedView;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -31,6 +47,54 @@ public class OrderMapFragment extends Fragment {
 
     public OrderMapFragment() {
         // Required empty public constructor
+    }
+
+    String builtUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyBqtSBQ16GbJiOpfpidSP64gvLQ9riIuWY";
+
+    void getFromDatabase(){
+
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users");
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String temp = (String)(dataSnapshot.child("address").getValue());
+            }
+            public void onCancelled(DatabaseError e){
+
+            }
+        });
+    }
+
+
+
+    double geocodeLatitude(LayoutInflater inflatedView){
+
+
+
+
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = builtUrl;
+
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.
+                        Log.d("debug", "Response is: "+ response.substring(0,500));
+                    }},
+                new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError e){
+                            Log.d("v imp", "That didn't work!");
+                        }
+                    });
+
+        queue.add(stringRequest);
+        return 0;
+                }
+    double geocodeLongitude(){
+        return 0;
     }
 
     /**
@@ -63,6 +127,7 @@ public class OrderMapFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        inflatedView =inflater.inflate(R.layout.fragment_order_map, container, false);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_order_map, container, false);
     }
