@@ -43,17 +43,16 @@ public class FoodListActivity extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-
+        Log.d("imp", "setting up callback");
         adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.activity_list_item,
                 listItems);
         setListAdapter(adapter);
-
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference mRef = mDatabase.getRef();
-        mRef.addValueEventListener(new ValueEventListener() {
+        mDatabase = FirebaseDatabase.getInstance().getReference("food-info");
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                System.exit(2);
                 Log.d("imp","data change!!");
                 for (DataSnapshot item_s:dataSnapshot.getChildren()) {
                     addItem((String)item_s.getValue());
@@ -62,7 +61,7 @@ public class FoodListActivity extends ListFragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.d("imp", databaseError.toString());
             }
         });
         return inflater.inflate(R.layout.activity_food_list, container, false);
