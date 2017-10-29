@@ -1,30 +1,16 @@
 package com.example.chianne.foodhack;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Toast;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,20 +47,21 @@ public class FoodListActivity extends ListFragment {
         c = container.getContext();
         View v =  inflater.inflate(R.layout.activity_food_list, container, false);
         cart = (Button) v.findViewById(R.id.cart_button);
+        cart.setText("Checkout");
+
+        Log.d("", (String)cart.getText());
         cart.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
+                cart = ((Button)getActivity().findViewById(R.id.cart_button));
                 cart.setText("Checkout");
                 cart.setOnClickListener(new View.OnClickListener()
                 {
                     @Override
                     public void onClick(View v)
                     {
-                        //getActivity().switchTab(2);
-
-
                     }
                 });
 

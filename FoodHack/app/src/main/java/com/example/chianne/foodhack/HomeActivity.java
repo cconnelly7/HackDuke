@@ -1,5 +1,6 @@
 package com.example.chianne.foodhack;
 
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,7 +23,9 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-public class HomeActivity extends AppCompatActivity {
+import java.net.URI;
+
+public class HomeActivity extends AppCompatActivity implements OrderMapFragment.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -32,6 +35,22 @@ public class HomeActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
+//    public interface OnHeadlineSelectedListener {
+//        public void onArticleSelected(int position);
+//        public abstract void OnFragmentInteraction(URI uri);
+//    }
+
+//    public interface OnFragmentInteractionListener {
+//        // TODO: Update argument type and name
+//        abstract void onFragmentInteraction(Uri uri);
+//    }
+
+
+    public int goToMap = 0;
+
+    @Override
+    public void onFragmentInteraction(Uri uri){};
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     /**
