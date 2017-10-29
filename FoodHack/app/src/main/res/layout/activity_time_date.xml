@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@drawable/berries"
-    android:layout_height="match_parent"
-    tools:context="com.example.chianne.foodhack.TimeDate">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.chianne.foodhack.RequestSubmissionFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </ListView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Submit delivery request"
+            android:id="@+id/requestSubmitButton" />
+
+        <EditText
+            android:id="@+id/requestedDatetime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/requestSubmitButton"
+            android:layout_centerHorizontal="true"
+            android:hint="Enter preferred time"
+            android:clickable="true"
+            android:focusable="false"
+            android:editable="false"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+

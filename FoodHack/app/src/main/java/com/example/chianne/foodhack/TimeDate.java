@@ -31,21 +31,22 @@ public class TimeDate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_time_date);
 
 
 
-        this.requestSubmitButton = (Button) findViewById(R.id.requestSubmitButton);
-        this.requestedDatetime = (TextView) findViewById(R.id.requestedDatetime);
+        requestSubmitButton = (Button) findViewById(R.id.requestSubmitButton);
+        requestedDatetime = (TextView) findViewById(R.id.requestedDatetime);
 
-        this.requestSubmitButton.setOnClickListener(new View.OnClickListener() {
+        requestSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = /*getActivity().*/getApplicationContext();
-                CharSequence text = "Delivery submitting...";
-                int duration = Toast.LENGTH_SHORT;
+//                Context context = /*getActivity().*/getApplicationContext();
+//                CharSequence text = "Delivery submitting...";
+//                int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+//                Toast toast = Toast.makeText(context, text, duration);
+//                toast.show();
                 //MapsActivity mapFragment = new MapsActivity();
                 Intent myIntent = new Intent(getApplicationContext(), TrackingActivity.class);
                 startActivity(myIntent);
@@ -90,7 +91,7 @@ public class TimeDate extends AppCompatActivity {
         };
 
 
-        this.requestedDatetime.setOnClickListener(new View.OnClickListener() {
+        requestedDatetime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("debugging", "pick a date");
