@@ -7,4 +7,10 @@
     android:id="@+id/ordersFrame"
     tools:context="com.example.chianne.foodhack.OrdersActivity">
 
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST!!!!!!" />
 </android.widget.FrameLayout>

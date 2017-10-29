@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), 3);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -125,9 +125,11 @@ public class HomeActivity extends AppCompatActivity {
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
+        private int numTabs;
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        public SectionsPagerAdapter(FragmentManager fm, int numTabs) {
             super(fm);
+            this.numTabs = numTabs;
         }
 
         @Override
@@ -148,8 +150,7 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return this.numTabs;
         }
 
         @Override
@@ -161,8 +162,9 @@ public class HomeActivity extends AppCompatActivity {
                     return "My Orders";
                 case 2:
                     return "Profile";
+                default:
+                    return null;
             }
-            return null;
         }
     }
 }
