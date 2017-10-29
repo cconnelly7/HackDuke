@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoadInScreen">
+        <activity android:name=".WelcomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,8 +37,9 @@
         <activity android:name=".TempActivity" />
         <activity android:name=".TimeDate" />
         <activity android:name=".TrackingActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".MapsActivity" />
         <activity android:name=".NewerProfileActivity"></activity>
-        <activity android:name=".DashboardActivity"></activity>
     </application>
 
 </manifest>
