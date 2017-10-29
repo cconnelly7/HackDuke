@@ -135,7 +135,7 @@ public class HomeActivity extends AppCompatActivity {
                     OrdersActivity orders = new OrdersActivity();
                     return orders;
                 case 2:
-                    ProfileTabActivity profile = new ProfileTabActivity();
+                    ProfileActivity profile = new ProfileActivity();
                     return profile;
             }
             return null;
