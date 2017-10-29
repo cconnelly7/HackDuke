@@ -179,8 +179,8 @@ public class WelcomePage extends AppCompatActivity implements View.OnClickListen
                             Log.d(TAG, "uid: " + uid);
                             String email = user.getEmail();
 
-                            User newUser = new User(email, "name", (new Date()).getTime(),
-                                    "1 st,x,CA,90706", uid, "food");
+                            User newUser = new User(email, "firstN lastN", (new Date()).getTime(),
+                                    "1 st,x,CA,90706", uid, "food,");
                             String key = mRegisteredUserRef.push().getKey();
                             mRegisteredUserRef.child(uid).setValue(newUser);
 

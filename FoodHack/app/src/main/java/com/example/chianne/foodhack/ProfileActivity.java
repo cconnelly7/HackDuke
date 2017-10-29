@@ -52,8 +52,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currUser = mAuth.getCurrentUser();
-    String currUserUID = currUser.getUid();
 
+    String currUserUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +88,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         saveBtn = (Button) findViewById(R.id.submitProfile);
         saveBtn.setOnClickListener(this);
 
-        loadProfile();
+        //loadProfile();
+
+        if(currUser != null) {
+            currUserUID = currUser.getUid();
+        }
+
 
         foodList = new ArrayList<>();
         chineseB.setOnClickListener(new View.OnClickListener() {
@@ -185,12 +190,16 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 String uid = (String) userDataMap.get("uid");
                 String name = (String) userDataMap.get("name");
                 String email = (String) userDataMap.get("email");
-               // long dateTime = (long) userDataMap.get("datetime");
+                //String dateTime = (String) userDataMap.get("datetime");
                 String address = (String) userDataMap.get("address");
                 String food = (String) userDataMap.get("food");
 
                 if (uid.equals(currUserUID)) {
+<<<<<<< HEAD
                     setFields(uid, name, email, 0, address, food);
+=======
+                    setFields(uid, name, email, address, food);
+>>>>>>> master
                 }
             }
 
@@ -217,7 +226,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    private void setFields(String uid, String name, String email, long datetime, String addr, String food) {
+    private void setFields(String uid, String name, String email,  String addr, String food) {
         String[] addressParsed = parseAddress(addr);
         String addr1 = addressParsed[0];
         String cityf = addressParsed[1];
