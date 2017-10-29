@@ -37,7 +37,8 @@
         <activity android:name=".ProfileTabActivity" />
         <activity android:name=".TempActivity" />
         <activity android:name=".TimeDate" />
-        <activity android:name=".TrackingActivity"></activity>
+        <activity android:name=".TrackingActivity" />
+        <activity android:name=".NewerProfileActivity"></activity>
     </application>
 
 </manifest>
