@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LogOnActivity" />
-<<<<<<< HEAD
+
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
@@ -25,9 +25,8 @@
         <activity android:name=".OrdersActivity" />
         <activity android:name=".FoodListActivity" />
         <activity android:name=".ProfileActivity"></activity>
-=======
         <activity android:name=".ProfileTabActivity"></activity>
->>>>>>> 706077ecf3b940dfed1036d13a5abf6ea656c895
+
     </application>
 
 </manifest>

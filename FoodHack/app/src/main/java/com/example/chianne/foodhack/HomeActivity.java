@@ -129,13 +129,13 @@ public class HomeActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch(position) {
                 case 0:
-                    OrdersActivity orders = new OrdersActivity();
-                    return orders;
-                case 1:
                     FoodListActivity foodList = new FoodListActivity();
                     return foodList;
+                case 1:
+                    OrdersActivity orders = new OrdersActivity();
+                    return orders;
                 case 2:
-                    ProfileActivity profile = new ProfileActivity();
+                    ProfileTabActivity profile = new ProfileTabActivity();
                     return profile;
             }
             return null;
@@ -151,9 +151,9 @@ public class HomeActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "My Orders";
-                case 1:
                     return "Select Food";
+                case 1:
+                    return "My Orders";
                 case 2:
                     return "Profile";
             }

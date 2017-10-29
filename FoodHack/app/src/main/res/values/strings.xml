@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">FoodHack</string>
-<<<<<<< HEAD
     <string name="title_activity_home">HomeActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_food_list">FoodList</string>
-=======
     <string name="title_activity_main">MainActivity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+
     <string name="first_name">First Name</string>
->>>>>>> 706077ecf3b940dfed1036d13a5abf6ea656c895
+
 </resources>
