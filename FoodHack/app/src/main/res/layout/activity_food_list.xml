@@ -24,6 +24,20 @@
 
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:weightSum="1">
+        <Button
+            android:id="@+id/cart_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
@@ -39,6 +53,7 @@
             android:divider="#000000"
             android:dividerHeight="1dp"
             android:listSelector="#F8F8FF" />
+
     </LinearLayout>
 <!--
     <TextView
@@ -62,12 +77,4 @@
         android:layout_below="@+id/veggies"
         android:layout_alignParentStart="true" />
         -->
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cart"
-        android:layout_marginBottom="48dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 </LinearLayout>
