@@ -2,9 +2,11 @@ package com.example.chianne.foodhack;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +34,7 @@ import android.widget.Toast;
  * Use the {@link RequestSubmissionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RequestSubmissionFragment extends Fragment {
+public class RequestSubmissionFragment extends Activity {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
@@ -72,24 +74,24 @@ public class RequestSubmissionFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        //fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+//        if (getArguments() != null) {
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
+//        }
 
 
 
     }
 
 
-    @Override
+    //@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -103,12 +105,26 @@ public class RequestSubmissionFragment extends Fragment {
         this.requestSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = getActivity().getApplicationContext();
+                Context context = /*getActivity().*/getApplicationContext();
                 CharSequence text = "Delivery submitting...";
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                //MapsActivity mapFragment = new MapsActivity();
+                Intent myIntent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(myIntent);
+                //getActivity().getSupportFragmentManager().findFragmentById(R.id.ordersFrame).setFragment(mapFragment);
+
+                //FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack if needed
+//                transaction.replace(R.id.ordersFrame, mapFragment);
+//                transaction.addToBackStack(null);
+//
+//// Commit the transaction
+//                transaction.commit();
             }
         });
 
@@ -143,11 +159,11 @@ public class RequestSubmissionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("debugging", "pick a date");
-                DatePickerDialog dp = new DatePickerDialog(getActivity(), date, myCalendar
+                DatePickerDialog dp = new DatePickerDialog(getApplicationContext(), date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH));
                 dp.show();
-                TimePickerDialog t = new TimePickerDialog(getActivity(), time,
+                TimePickerDialog t = new TimePickerDialog(getApplicationContext(), time,
                         myCalendar.get(Calendar.HOUR_OF_DAY),
                         myCalendar.get(Calendar.MINUTE), false);
                 t.show();
@@ -165,22 +181,22 @@ public class RequestSubmissionFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            //throw new RuntimeException(context.toString()
-            //        + " must implement OnFragmentInteractionListener");
-        }
-    }
+    //@Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            //throw new RuntimeException(context.toString()
+//            //        + " must implement OnFragmentInteractionListener");
+//        }
+//    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
+//    @Override
+//    public void onDetach() {
+//        super.onDetach();
+//        mListener = null;
+//    }
 
     /**
      * This interface must be implemented by activities that contain this
