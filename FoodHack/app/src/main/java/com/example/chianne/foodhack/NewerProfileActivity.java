@@ -82,7 +82,7 @@ public class NewerProfileActivity extends AppCompatActivity implements View.OnCl
         indianB = (CheckBox) v.findViewById(R.id.indianText);
         mexicanB = (CheckBox) v.findViewById(R.id.mexicanText);
 
-        saveBtn = (Button) v.findViewById(R.id.submitProfile_);
+        saveBtn = (Button) v.findViewById(R.id.submitProfile);
 
         foodList = new ArrayList<>();
         if (chineseB.isChecked()) {
