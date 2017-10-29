@@ -16,5 +16,13 @@
     <ListView
         android:id="@+id/lv2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="216dp" />
+
+    <Button
+        android:id="@+id/submitOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Schedule Order" />
+
+
 </LinearLayout>

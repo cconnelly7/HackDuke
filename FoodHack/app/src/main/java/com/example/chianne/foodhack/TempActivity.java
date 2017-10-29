@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TempActivity extends AppCompatActivity {
+public class TempActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView lv1;
     private ListView lv2;
 
@@ -27,11 +28,16 @@ public class TempActivity extends AppCompatActivity {
     private ArrayAdapter<String> foodAdapter;
     private ArrayAdapter<String> cartAdapter;
 
+    private Button submitBtn;
+
     DatabaseReference foodListRef = FirebaseDatabase.getInstance().getReference("food-list");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
+
+        submitBtn = (Button) findViewById(R.id.submitOrder);
+        submitBtn.setOnClickListener(this);
 
         foodItems = new ArrayList<>();
         cartItems = new ArrayList<>();
@@ -92,4 +98,13 @@ public class TempActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v == submitBtn) {
+
+        }
+    }
+
+
 }
