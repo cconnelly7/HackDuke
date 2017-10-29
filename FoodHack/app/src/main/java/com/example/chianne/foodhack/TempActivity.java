@@ -1,5 +1,6 @@
 package com.example.chianne.foodhack;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -102,7 +103,8 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == submitBtn) {
-
+            Intent intent = new Intent(getApplicationContext(), TimeDate.class);
+            startActivity(intent);
         }
     }
 
